@@ -3,6 +3,18 @@
 How to improve your AWS Lambda performance. 
 This section, I will explain basic concept of AWS Lambda and get deeper into behind the scenes of Lambda compute. You will understand apparently about Lambda works.
 
+## Table of Content
+
+- **[About AWS Lambda](#about-awslambda)**
+  - [Overview serverless application](#overview-serverless-application)
+  - [Lambda Invacation](#lambda-invacation)
+  - [Pricing Model](#pricing-model)
+- **[Optimization](#optimization)**
+  - [Best Practice Serverless Architecting](#1-best-practice-serverless-architecting)
+  - [Optimize code](#2-optimize-code)
+  - [AWS Lambda Power Tuning](#3-aws-lambda-power-tuning)
+- **[Conclusion](#conclusion)**
+
 ## About AWS Lambda
 
 AWS Lambda is a serverless compute service that runs your code in response to events and automatically manages the underlying compute resources for you. This concept models is called `function as a service` (FaSS).
@@ -67,11 +79,11 @@ The most optimization propose is cost reduction, otherwise reduce code time in t
 
 There's limitation of Lamda such as `timeout` `code size` etc. So you need to use Lambda to right propose. There are 2 type of Lambda architecting that categorize by invation model.
 
-1. Synchronous
+#### 1.1 Synchronous
 
 It's usage for API model, request and response instantly. The reponse time is not over 29s. It mean to Lambda execution time is less than 29s too.
 
-2. Asynchronous for event
+#### 1.2 Asynchronous for event
 
 It's used for event model. Lamda need much time to process event. execution time could be used in maximum, 5 minute.
 
